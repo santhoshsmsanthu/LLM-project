@@ -1,6 +1,7 @@
 import logging
 from typing import Any
 
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
@@ -101,4 +102,11 @@ async def run_batch():
     raise HTTPException(
         status_code=501,
         detail="Batch processing is not implemented until Phase 7",
+    )
+
+if __name__ == "__main__":
+    uvicorn.run(
+        app,
+        host="127.0.0.1",
+        port=settings.PORT,
     )
