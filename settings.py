@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     PORT: int = 8080
     ENV: str = "development"
     LOG_LEVEL: str = "INFO"
+    MAX_WORKER_THREADS: int = 4
+    MAX_QUEUED_JOBS: int = 40
 
     MONGO_TARGET: str = "local"
     MONGODB_URI: str = "mongodb://localhost:27017"
